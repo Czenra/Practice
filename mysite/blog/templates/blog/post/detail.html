@@ -3,9 +3,9 @@
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
-	<h1>{{ post.title }}</h1>
+	<h1 id="text-1">{{ post.title }}</h1>
 	<p class="date">
-		Published {{ post.publish }} by {{ post.author }}
+		Опубликовано {{ post.publish }} пользователем {{ post.author }}
 	</p>
 	{{ post.body|linebreaks }}
 	{% with comments.count as total_comments %}
@@ -15,15 +15,15 @@
 {% for comment in comments %}
 	<div class="comment">
 		<p class="info">
-			Comment {{ forloop.counter }} by {{ comment.name }}
+			Комментарий {{ forloop.counter }} от {{ comment.name }}
 			{{ comment.created }}
 		</p>
 		{{ comment.body|linebreaks }}
 	</div>
 {% empty %}
-	<p>There are no comments yet.</p>
+	<p>Пока что здесь нет комментариев</p>
 {% endfor %}
-<h2>Add a new comment</h2>
+<h2>Добавить новый комментарий</h2>
 	<form action="{% url "blog:post_comment" post.id %}" method="post">
 		{{ form.as_p }}
 		{% csrf_token %}

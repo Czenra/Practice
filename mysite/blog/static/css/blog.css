@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "efngermanik";
+  src: url("efngermanik.ttf");
+}
+#text-1 {
+	font-family: "efngermanik";
+}
 body { 
     margin:0;
     padding:0;
@@ -10,7 +17,6 @@ a {
 }
 
 h1 { 
-    font-weight:normal;
     border-bottom:1px solid #bbb;
     padding:0 0 10px 0;
 }
@@ -30,7 +36,7 @@ h2 {
     float:right;
     width:30%;
     padding:10px;
-    background:#efefef; 
+    background:#e8e8e8; 
     height:100%;
 }
 
